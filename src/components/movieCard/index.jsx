@@ -1,8 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-export const MovieCard = ({title,rating,description,imgSrc}) => {
+export const MovieCard = ({title,rating,link,description,imgSrc}) => {
+  const navig=useNavigate()
   return (
-    <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div onClick={()=>navig(`details/${title}/${link}/${description}`)} className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
     <ul className="divide-y divide-gray-200">
         <li  className="py-4 flex">
           <div className="ml-3">
